@@ -1,0 +1,10 @@
+1h.txt:J_eff -0.0374735 eV
+2h.txt:J_eff -0.0233419 eV
+3h.txt:J_eff 0.0384165 eV
+3h.txt:J_eff 0.0384165 eV
+3h.txt:J_eff 0.0384165 eV
+6h.txt:J_eff -0.156887 eV
+7h.txt:J_eff 0.150906 eV
+7h.txt:J_eff 0.150906 eV
+9h.txt:J_eff 0.150581 eV
+9h.txt:J_eff 0.150581 eV
