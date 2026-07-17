@@ -7,3 +7,4 @@ File AQ contains the rates of charge separation and recombination at interface A
 File PM6 contains the charge transfer integral for different interface configurations.
 maincode.py has the output as mobility and charge carrier density for PM6-AQx OPV device.
 jvcode.py results in JSC and VOC of PM6-AQx OPV device based on values computed by maincode.py.
+** jvcode.py has been taken down for maintainance **
