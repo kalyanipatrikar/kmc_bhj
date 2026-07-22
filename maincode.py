@@ -12,6 +12,8 @@ h=(6.602E-34)/(2*pi)
 m= 9.31 *10**-31
 qsbym= 1.602**2/9.31 * 10**-7
 
+sigma= 0.06
+RE= 0.1
 
 #####################################################################################################################################################################################################
  #                                                                                                    GRID                                                     
@@ -22,9 +24,7 @@ W=10
 L=10
 H=10
 N= H*(L*W)
-
-sigma= 0.06
-RE= 0.1 
+                                
 """every point gets an index from 0 to N-1. Neighbours of i^th point are found in nbr[i]. Donor indices are [0:N/2] """
 
 def nbr(x):
@@ -143,7 +143,7 @@ def nbr(x):
 #    return nb
 
 def distance( A1, A2): #   np.array([a,b,c]), np.array([p,q,r])):
-    return( np.sqrt( (A1[0]- A2[0])**2 + (A1[0]- A2[0])**2 + (A1[1]- A2[1])**2  + (A1[2]- A2[2])**2   ) ) 
+    return( np.sqrt( (A1[0]- A2[0])**2 +  (A1[1]- A2[1])**2  + (A1[2]- A2[2])**2   ) ) 
    
 
 d= 4.0
@@ -212,14 +212,14 @@ def eh_diffusion (ep, hp):
         #rate=np.random.rand(len(iddn))*10**12
         #rate= np.apepnd(rate, conf )
         #rate= np.apepnd(rate, np.random.rand()*10**12 )    #Apepnd rate of recombination of e-h+ pair
-        coulrate= np.sqrt(qsbym/ (4*pi*dec*(xx*10**-9)**3))
+        coulrate= np.sqrt(qsbym/ (4*pi*dec*(xx*d*10**-9)**3))
         rate= np.append(rate, coulrate )
         ks=rate/(np.sum(rate,axis=0))
         kc=np.cumsum(ks,axis=0)
         r=(np.random.rand()) # ,(26,1)) #, len(idn[0])
         kc[kc<r]=2
         idxnn=np.argmin((kc),axis=0)
-        te= 1/rate[len(rate)-1]
+        te = 1/rate[idxnn]
 
         if idxnn !=(len(iddn)):
             iddnh= np.array( nbr(hp)[np.where( nbr(hp) <N/2-(L*W))]).T
@@ -325,7 +325,7 @@ for m in np.arange(trials):
     b=0
     E= (np.random.normal(0.0, sigma, N) )
     xx= np.arange(N)//(L*W)
-    E= E- xx*V/(L*W)
+    E= E- xx*V/H               
 
     for i in np.arange(int(N/2 )):
         nD= nbr(i)
@@ -336,8 +336,8 @@ for m in np.arange(trials):
     for i in np.arange(int(N/2)):
         nD= nbr(i+ N/2)
         inD= sel(len(nD))
-        JD= A_rates[:,2][inD]
-        elecdiff[i]= hop( JD, E[i]- E[nD])
+        #JD= A_rates[:,2][inD]
+        elecdiff[i]= A_rates[:,2][inD] # hop( JD, E[i + int(N/2)]- E[nD])
     
     for n in np.arange(times-1):
         if c==1:
@@ -464,5 +464,5 @@ mue= np.mean(mu_e[np.nonzero(mu_e) ])
 vh= np.mean(v_h[np.nonzero(v_h) ])
 ve= np.mean(v_e[np.nonzero(v_e) ])
 #################################################################################################################################################################
-print(muh, nh, q*vh*nh ) 
-print(mue, ne, q*ve*ne ) 
+print(muh, q*vh*nh ) 
+print(mue, q*ve*ne ) 
