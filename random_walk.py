@@ -12,9 +12,9 @@ m= 9.31 *10**-31
 c= 3* 10**8
 qsbym= 1.602**2/9.31 * 10**-7  #in SI units
 
-W=400
-L=400
-H=400
+W=800
+L=800
+H=800
 N= H*(L*W)
 
 sigma= 0.10
@@ -40,7 +40,7 @@ shift= np.sqrt(dx**2+dy**2+dz**2)
 costheta= (np.random.rand(N))
 cosphi= (np.random.rand(N))
 
-A_J = np.genfromtxt('file_J', usecols=1) #, delimiter= ',', skip_header=1 
+A_J = np.genfromtxt('AQx2.txt') #, delimiter= ',', skip_header=1 
  
 def discor( A1, A2): #   np.array([a,b,c]), np.array([p,q,r])):
     return( np.sqrt(  (A1//(L*W)- A2//(L*W))**2 + ((A1%((L*W)))//L-(A2%((L*W)))//L)**2 +((A1%((L*W)))%L-(A2%((L*W)))%L )**2 ) ) 
@@ -50,8 +50,8 @@ def hop( J, dE):
     return( (q**2*J**2/h)*np.sqrt(np.pi/(q*RE*T*kB))*np.exp( -(RE*q-dE*q)**2/(4*kB*T*RE*q))) 
 diff= np.empty(int(N/2), dtype=object) #- L*W), dtype=object)  #shape= ( int(N/2- L*W), 26) )
 
-trials=4000
-times=3200
+trials=400
+times=6000
 time= np.empty(shape=( trials, times))
 x= np.empty(shape=( trials, times))
 
@@ -62,7 +62,7 @@ for m in np.arange(trials):
     for n in np.arange(times):
         idn= nbr(p) 
         inD= sel(len(idn))
-        J= A_J[inD]* np.exp(-dx[0][inD])*costheta[inD]**2#*cosphi[inD]**2
+        J= A_J[inD]* np.exp(-dx[0][idn])*costheta[idn]**2#*cosphi[idn]**2
 
         rate= hop(J, E[p]- E[idn] )
         ks=rate/(np.sum(rate,axis=0))
