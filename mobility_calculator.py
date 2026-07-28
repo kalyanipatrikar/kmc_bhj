@@ -8,7 +8,7 @@ T=300
 L=800
 W=800
 H=800
-trials=1000
+trials=400
 d= 3.27#(np.genfromtxt('intersite_d'))[0]
 def discor( A1, A2): #   np.array([a,b,c]), np.array([p,q,r])):
     return( np.sqrt(  (A1//(L*W)- A2//(L*W))**2 + ((A1%((L*W)))//L-(A2%((L*W)))//L)**2 +((A1%((L*W)))%L-(A2%((L*W)))%L )**2 ) ) 
