@@ -40,7 +40,7 @@ shift= np.sqrt(dx**2+dy**2+dz**2)
 costheta= (np.random.rand(N))
 cosphi= (np.random.rand(N))
 
-A_J = np.genfromtxt('AQx2.txt') #, delimiter= ',', skip_header=1 
+A_J = np.genfromtxt('J.txt') #, delimiter= ',', skip_header=1 
  
 def discor( A1, A2): #   np.array([a,b,c]), np.array([p,q,r])):
     return( np.sqrt(  (A1//(L*W)- A2//(L*W))**2 + ((A1%((L*W)))//L-(A2%((L*W)))//L)**2 +((A1%((L*W)))%L-(A2%((L*W)))%L )**2 ) ) 
