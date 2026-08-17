@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# generated output - everything except the directory placeholders
+out_folder/**
+!out_folder/.gitkeep
+
+# large structure files dropped in by the user
+data/*.cif
+!data/2161927.cif
