@@ -1,4 +1,4 @@
-# MLIP toolkit
+# MLIP Configurations to Mobility (BETA)
 
 Charge carrier mobility of a molecular semiconductor, computed from nothing but
 its crystal structure.
