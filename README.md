@@ -213,12 +213,14 @@ too expensive and too stochastic — and are instead guarded from the inside by
 the drift, overlap and orbital-degeneracy warnings the stages print.
 
 ---
-
-**Near-degenerate frontier orbitals** are handled, but the manifold width is a
+## Possible Issues
+Near-degenerate frontier orbitals are handled, but the manifold width is a
 choice. `dft.degeneracy_window` (0.10 eV) and `dft.max_manifold` (4) decide how
 many orbitals join the frontier one; widening the window too far eventually
 makes the fragment orbital set linearly dependent in the dimer basis, which fails loudly rather than silently.
+
 ---
+## Upcoming Update
 Next update will include an alternate way to get starting structures of dimers, so that packing information (.cif) is not necessary.
 
 ---
