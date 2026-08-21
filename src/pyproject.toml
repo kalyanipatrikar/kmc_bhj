@@ -1,6 +1,0 @@
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-addopts = "-q --strict-markers"
-markers = [
-    "slow: end-to-end checks that call pyscf; deselect with -m 'not slow'",
-]

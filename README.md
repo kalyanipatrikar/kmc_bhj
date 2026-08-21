@@ -1,4 +1,4 @@
-# MLIP Configurations to Mobility (BETA)
+# MLIP toolkit
 
 Charge carrier mobility of a molecular semiconductor, computed from nothing but
 its crystal structure.
@@ -212,7 +212,6 @@ the drift, overlap and orbital-degeneracy warnings the stages print.
 
 ---
 
-## Known issues
 **Near-degenerate frontier orbitals** are handled, but the manifold width is a
 choice. `dft.degeneracy_window` (0.10 eV) and `dft.max_manifold` (4) decide how
 many orbitals join the frontier one; widening the window too far eventually
