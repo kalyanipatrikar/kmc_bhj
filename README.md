@@ -2,7 +2,8 @@
 
 Charge carrier mobility of a molecular semiconductor, computed from nothing but
 its crystal structure. The methods for computing mobility and the entire algorithm has been described in 
-https://doi.org/10.1021/acs.jctc.4c01029. The paper made use of Gaussian 16 for calculating chargr transfer integrals, here a method using only python based packages is presented. If you use this for your work please cite "K. Patrikar, K. Patadia, R. Khatua, A. Mondal
+https://doi.org/10.1021/acs.jctc.4c01029; a synopsis of the project is at https://kalyanipatrikar.github.io/kmc.html.
+The paper made use of Gaussian 16 for calculating chargr transfer integrals, here a method using only python based packages is presented. If you use this for your work please cite "K. Patrikar, K. Patadia, R. Khatua, A. Mondal
 J. Chem. Theory Comput, 20, 22, 10120–10131, 2024".
 
 The pipeline goes: packing information → thermally sampled dimer geometries
