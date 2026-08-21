@@ -1,9 +1,11 @@
-# MLIP toolkit
+# Mobility of Small Molecule Semiconductors with MLIP Derived Structures
 
 Charge carrier mobility of a molecular semiconductor, computed from nothing but
-its crystal structure.
+its crystal structure. The methods for computing mobility and the entire algorithm has been described in 
+https://doi.org/10.1021/acs.jctc.4c01029. The paper made use of Gaussian 16 for calculating chargr transfer integrals, here a method using only python based packages is presented. If you use this for your work please cite "K. Patrikar, K. Patadia, R. Khatua, A. Mondal
+J. Chem. Theory Comput, 20, 22, 10120–10131, 2024".
 
-The pipeline goes: experimental packing → thermally sampled dimer geometries
+The pipeline goes: packing information → thermally sampled dimer geometries
 from a machine-learned interatomic potential → transfer integrals from DFT →
 kinetic Monte Carlo hopping → mobility.
 
@@ -215,8 +217,9 @@ the drift, overlap and orbital-degeneracy warnings the stages print.
 **Near-degenerate frontier orbitals** are handled, but the manifold width is a
 choice. `dft.degeneracy_window` (0.10 eV) and `dft.max_manifold` (4) decide how
 many orbitals join the frontier one; widening the window too far eventually
-makes the fragment orbital set linearly dependent in the dimer basis, which
-fails loudly rather than silently. See *Frontier manifolds* above.
+makes the fragment orbital set linearly dependent in the dimer basis, which fails loudly rather than silently.
+---
+Next update will include an alternate way to get starting structures of dimers, so that packing information (.cif) is not necessary.
 
 ---
 
