@@ -1,4 +1,4 @@
-# Mobility of Small Molecule Semiconductors with MLIP Derived Structures
+# Mobility of Small Molecule Semiconductors with MLIP-MD Derived Structures
 
 Charge carrier mobility of a molecular semiconductor, computed from nothing but
 its crystal structure. The methods for computing mobility and the entire algorithm has been described in 
