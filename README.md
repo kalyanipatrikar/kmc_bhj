@@ -3,7 +3,7 @@
 Charge carrier mobility of a molecular semiconductor, computed from nothing but
 its crystal structure. The methods for computing mobility and the entire algorithm has been described in 
 https://doi.org/10.1021/acs.jctc.4c01029; a synopsis of the project is at https://kalyanipatrikar.github.io/kmc.html.
-The paper made use of Gaussian 16 for calculating chargr transfer integrals, here a method using only python based packages is presented. If you use this for your work please cite "K. Patrikar, K. Patadia, R. Khatua, A. Mondal
+The paper made use of Gaussian 16 for calculating chargr transfer integrals, here a method using only python based packages is presented. If you use this for your work please cite "K. Patrikar, K. Patadia, R. Khatua, A. Mondal,
 J. Chem. Theory Comput, 20, 22, 10120–10131, 2024".
 
 The pipeline goes: packing information → thermally sampled dimer geometries
@@ -45,14 +45,13 @@ conda activate mlip
 pip install -r requirements.txt
 ```
 
-Two things `requirements.txt` cannot express:
+Two Recommendations:
 
-* **GPU torch.** Stage 2 is tens of picoseconds of MACE dynamics per motif and
+* **GPU torch:** Stage 2 is tens of picoseconds of MACE dynamics per motif and
   is impractically slow on a CPU. Install the CUDA build first, matching the
   `cu###` suffix to the driver on the machine:
   `pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124`
-* **Platform.** `pyscf` has no Windows build, so stage 3 needs WSL, Linux or
-  macOS. Stages 1, 2, 4 and 5 run anywhere.
+* **Platform:** `pyscf` has no Windows build, so stage 3 needs Linux, or WSL if on Windows. Stages 1, 2, 4 and 5 run anywhere.
 
 ## Run
 
@@ -71,6 +70,7 @@ or `python scripts/run_all.py`, optionally with `--from 3 --to 4`.
 `python -m src.analysis` prints what every stage has produced so far, which is
 the quickest way to pick up a run you left days ago.
 
+* **Checkpoints**
 Every stage is resumable. Stages 2 and 3 checkpoint per frame, so an
 interrupted run continues from the last completed one rather than starting
 over.
