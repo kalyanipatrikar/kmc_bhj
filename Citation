@@ -1,0 +1,19 @@
+If you use this software in your research, please cite:
+Kalyani Patrikar, Keval Patadia, Rudranarayan Khatua, Anirban Mondal; From Molecules to Devices: A Multiscale Approach to Evaluating Organic Photovoltaics. J. Chem. Theory Comput. 26 November 2024; 20 (22): 10120–10131.
+
+@article{10.1021/acs.jctc.4c01029,
+    author = {Patrikar, Kalyani and Patadia, Keval and Khatua, Rudranarayan and Mondal, Anirban},
+    title = {From Molecules to Devices: A Multiscale Approach to
+Evaluating Organic Photovoltaics},
+    journal = {Journal of Chemical Theory and Computation},
+    volume = {20},
+    number = {22},
+    pages = {10120-10131},
+    year = {2024},
+    month = {11},
+    issn = {1549-9618},
+    doi = {10.1021/acs.jctc.4c01029},
+    url = {https://doi.org/10.1021/acs.jctc.4c01029},
+    eprint = {https://pubs.acs.org/jctcce/article-pdf/20/22/10120/1772960/ct4c01029.pdf},
+}
+
